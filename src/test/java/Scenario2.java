@@ -18,6 +18,8 @@ import static org.junit.Assert.fail;
 public class Scenario2 {
 
     public ChromeDriver driver;
+    private String baseUrl;
+    private StringBuffer verificationErrors = new StringBuffer();
 
     @Before
     public void setUp() throws Exception {

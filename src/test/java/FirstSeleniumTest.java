@@ -18,13 +18,25 @@ public class FirstSeleniumTest extends BaseTest {
 
     @Test
     public void shouldBeAbleToLoginWithCorrectCredentials() {
-        insertText(loginField, login);
+        logIn();
+        assertTrue(isElementPresent(accountButton));
+        signOut();
+        assertTrue(isElementPresent(someButtonOnSignOutPage));
+    }
+
+    private void tryLogIn(String username, String pass) {
+        insertText(loginField, username);
         insertText(passField, pass);
         click(loginButton);
-        assertTrue(isElementPresent(accountButton));
+    }
+
+    private void logIn() {
+        tryLogIn(login, pass);
+    }
+
+    private void signOut() {
         click(accountButton);
         click(signOutButton);
-        assertTrue(isElementPresent(someButtonOnSignOutPage));
     }
 
 }

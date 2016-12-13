@@ -57,6 +57,7 @@ crashlytics-build.properties
 fabric.properties
 
 .gitignore
+autotest.iml
 .idea
 .idea/libraries/Maven__cglib_cglib_nodep_2_1_3.xml
 .idea/libraries/Maven__com_google_code_gson_gson_2_3_1.xml

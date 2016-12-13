@@ -14,6 +14,7 @@ public class TestScenario {
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
 
+
     @Before
     public void setUp() throws Exception {
         //driver = new FirefoxDriver();
@@ -22,8 +23,8 @@ public class TestScenario {
         chromeOptions.addArguments("--start-maximized");
 
         driver = new ChromeDriver(chromeOptions);
-
-        baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com";
+        baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com/";
+        //baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 

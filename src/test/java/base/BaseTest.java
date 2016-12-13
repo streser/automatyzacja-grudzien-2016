@@ -7,6 +7,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +27,9 @@ public class BaseTest {
     protected final String INCORRECT_PASSWORD = "dupa123";
     protected final String BASE_URL = "https://szkolenieautoamatyzacjatech.wordpress.com/wp-admin/";
     private final By SIGN_OUT_BUTTON = By.cssSelector("button.ab-sign-out");
+
     private WebDriver driver;
+    WebDriverWait wait;
 
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
@@ -45,7 +49,9 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", "C:/workspace/testautomation/src/main/resources/chromedriver.exe");
         chromeOptions.addArguments("--start-maximized");
         driver = new ChromeDriver(chromeOptions);
+        driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 10);
     }
 
     protected void insertText(By locator, String text) {
@@ -83,5 +89,9 @@ public class BaseTest {
 
     protected void logIn() {
         tryLogIn(CORRECT_LOGIN, CORRECT_PASSWORD);
+    }
+
+    protected void waitForPresent(By locator){
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 }

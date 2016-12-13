@@ -6,37 +6,30 @@ import static org.junit.Assert.assertTrue;
 
 public class FirstSeleniumTest extends BaseTest {
 
-    private By loginField = By.id("user_login");
-    private By passField = By.id("user_pass");
-    private By loginButton = By.id("wp-submit");
-    private By accountButton = By.cssSelector("img.avatar.avatar-32");
-    private By signOutButton = By.cssSelector("button.ab-sign-out");
-    private By someButtonOnSignOutPage = By.cssSelector("button.menu-toggle.x");
-
-    private String login = "warsztatautomatyzacja";
-    private String pass = "notsosimplepass123";
-
     @Test
     public void shouldBeAbleToLoginWithCorrectCredentials() {
+        open(BASE_URL);
         logIn();
-        assertTrue(isElementPresent(accountButton));
+        assertTrue(isElementPresent(ACCOUNT_ICON));
         signOut();
-        assertTrue(isElementPresent(someButtonOnSignOutPage));
+        assertTrue(isElementPresent(SOME_BUTTON_ON_SIGN_OUT_PAGE));
+    }
+
+    @Test
+    public void shouldNotBeAbleToLoginWithIncorrectCredentials() {
+        open(BASE_URL);
+        tryLogIn(CORRECT_LOGIN, INCORRECT_PASSWORD);
+        assertTrue(isElementPresent(LOGIN_ERROR_MESSAGE));
     }
 
     private void tryLogIn(String username, String pass) {
-        insertText(loginField, username);
-        insertText(passField, pass);
-        click(loginButton);
+        insertText(LOGIN_FIELD, username);
+        insertText(PASSWORD_FIELD, pass);
+        click(LOGIN_BUTTON);
     }
 
     private void logIn() {
-        tryLogIn(login, pass);
-    }
-
-    private void signOut() {
-        click(accountButton);
-        click(signOutButton);
+        tryLogIn(CORRECT_LOGIN, CORRECT_PASSWORD);
     }
 
 }

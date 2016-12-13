@@ -41,6 +41,7 @@ public class testTest {
             driver.findElement(By.id("wp-submit")).click();
             assertEquals("Witaj na WordPress.com!", driver.findElement(By.cssSelector("h2")).getText());
             driver.findElement(By.xpath("//*[@class='elsewhere-tv']")).click();
+            driver.findElement(By.xpath("//*[@class='elsewhere-tv']")).click();
         }
 
         @After

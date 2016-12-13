@@ -19,13 +19,13 @@ public class TestScenario {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
         driver = new ChromeDriver(chromeOptions);
-        baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com/";
+        baseUrl = "http://streser.nazwa.pl/szkolenia/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    protected void tryLogin() {
-        InsertText(By.id("user_login"), "Warsztatautomatyzacja");
-        InsertText(By.id("user_pass"), "notsosimplepass123");
+    protected void tryLogin(String password, String login) {
+        InsertText(By.id("user_login"), login);
+        InsertText(By.id("user_pass"), password);
         driver.findElement(By.id("wp-submit")).click();
     }
 

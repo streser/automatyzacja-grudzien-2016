@@ -31,7 +31,7 @@ public class MyFirstSeleniumTest {
 
     @Test
     public void testIde() throws Exception {
-        driver.get(baseUrl + "/");
+        driver.get(baseUrl + "/wp-admin");
         driver.findElement(By.id("user_login")).clear();
         driver.findElement(By.id("user_login")).sendKeys("warsztatautomatyzacja");
         driver.findElement(By.id("user_pass")).clear();

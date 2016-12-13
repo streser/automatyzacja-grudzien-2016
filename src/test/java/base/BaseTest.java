@@ -14,7 +14,7 @@ import static org.junit.Assert.fail;
 
 public class BaseTest {
 
-    protected WebDriver driver;
+    private WebDriver driver;
     private String baseUrl;
 
     private boolean acceptNextAlert = true;
@@ -53,5 +53,10 @@ public class BaseTest {
             return false;
         }
     }
+
+    protected void click(By locator){
+        driver.findElement(locator).click();
+    }
+
 
 }

@@ -29,7 +29,8 @@ public class Scenario {
 
         driver = new ChromeDriver(chromeOptions);
         baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com/";
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().deleteAllCookies();
     }
 
     protected void open() {

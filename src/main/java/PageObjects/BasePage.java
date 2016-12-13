@@ -1,18 +1,39 @@
 package PageObjects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 /**
  * Created by Administrator on 2016-12-13.
  */
-public class BasePage {
+public abstract class BasePage {
     protected WebDriver driver;
 
     BasePage(WebDriver driver){
         this.driver = driver;
     }
 
-    public BasePage open(String url) {
-        return new BasePage(driver);
+    public void open(String url) {
+
     }
+
+    protected boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    protected void insertText(By locator, String text) {
+        driver.findElement(locator).clear();
+        driver.findElement(locator).sendKeys(text);
+    }
+
+    protected void click(By locator){
+        driver.findElement(locator).click();
+    }
+
 }

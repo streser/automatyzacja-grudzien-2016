@@ -5,4 +5,9 @@ public class AdminPage {
     public AddNewPostPage goToNewPostPage() {
 
     }
+
+    public PostPage goToPostPage() {
+
+
+    }
 }

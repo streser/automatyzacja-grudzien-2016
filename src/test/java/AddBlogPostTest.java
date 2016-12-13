@@ -10,6 +10,8 @@ public class AddBlogPostTest extends TestScenario {
           AddNewPostPage anp = ap.goToNewPostPage();
           anp.publishNewPost("title", "text");
           anp.LogOut();
+          PostPage pp = new PostPage(driver);
+          pp.findPost("title");
 
         }
 }

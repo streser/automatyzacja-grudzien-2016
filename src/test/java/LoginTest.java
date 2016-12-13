@@ -12,7 +12,7 @@ import org.openqa.selenium.*;
  * Created by Administrator on 2016-12-13.
  */
 @RunWith(JUnitParamsRunner.class)
-public class MyFirstSeleniumTest extends MainSeleniumTest {
+public class LoginTest extends MainSeleniumTest {
 
     @Test
     public void shouldLogInWithCorrectCredentials() throws Exception {

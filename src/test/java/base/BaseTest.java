@@ -25,7 +25,7 @@ public class BaseTest {
     protected final String CORRECT_LOGIN = "warsztatautomatyzacja";
     protected final String CORRECT_PASSWORD = "notsosimplepass123";
     protected final String INCORRECT_PASSWORD = "dupa123";
-    protected final String BASE_URL = "https://szkolenieautoamatyzacjatech.wordpress.com/wp-admin/";
+    protected final String BASE_URL = "http://streser.nazwa.pl/szkolenia/wp-login.php";
     private final By SIGN_OUT_BUTTON = By.cssSelector("button.ab-sign-out");
 
     private WebDriver driver;

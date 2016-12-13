@@ -58,4 +58,4 @@ fabric.properties
 .idea
 .gitignore
 chromedriver.exe
-src/main/
+*.iml

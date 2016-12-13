@@ -3,6 +3,8 @@ import org.junit.Before;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +17,8 @@ public class Scenario {
     public static final By WRITE_BUTTON = By.cssSelector("#wp-admin-bar-ab-new-post > a.ab-item > span");
     public static final String CORRECT_LOGIN = "Warsztatautomatyzacja";
     public static final String CORRECT_PASSWORD = "notsosimplepass123";
+    public static final String INCORRECT_LOGIN = "zlyLogin";
+    public static final String INCORRECT_PASSWORD = "zleHaslo";
     private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
@@ -28,8 +32,15 @@ public class Scenario {
 
 //        driver = new ChromeDriver();
         driver = new ChromeDriver(chromeOptions);
-        baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com/";
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().deleteAllCookies();
+        baseUrl = "http://streser.nazwa.pl/szkolenia/";
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);// to sprawia ze czeka aż sie załaduje (?)
+
+//        //ajax - jak wyswietla sie np. komunikat o Errorze w logowaniu bez przeładowania strony -wtedy Selenium nam nie będzie działać i na to jest rozwiązanie czekanie wait
+//
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("login_error"))); //tu jest dużo opcji do wyboru- można czekać na wiele rzeczy i to jest ważne narzędzie
+
     }
 
     protected void tryLogOut() {

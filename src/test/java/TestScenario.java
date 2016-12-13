@@ -5,6 +5,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,13 +30,16 @@ public class TestScenario {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
         driver = new ChromeDriver(chromeOptions);
+        driver.manage().deleteAllCookies();
 
-        open("https://szkolenieautoamatyzacjatech.wordpress.com");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+//        WebDriverWait wait = new WebDriverWait(driver, 10);  //czekaj aż jakiś warunek będzie prawdą
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("LOGIN_ERROR")));
     }
 
-    private void open(String baseUrl) {
-        this.baseUrl = baseUrl;
+    public void open(String baseUrl) {
+       driver.get(baseUrl);
     }
 
     protected void tryLogOut() {

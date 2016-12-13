@@ -1,0 +1,101 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Maven template
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Exclude maven wrapper
+!/.mvn/wrapper/maven-wrapper.jar
+### JetBrains template
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+.gitignore
+.idea/libraries/Maven__cglib_cglib_nodep_2_1_3.xml
+.idea/libraries/Maven__com_google_code_gson_gson_2_3_1.xml
+.idea/libraries/Maven__com_google_guava_guava_19_0.xml
+.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml
+.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml
+.idea/libraries/Maven__commons_io_commons_io_2_4.xml
+.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml
+.idea/libraries/Maven__io_netty_netty_3_5_7_Final.xml
+.idea/libraries/Maven__junit_junit_4_12.xml
+.idea/libraries/Maven__net_java_dev_jna_jna_4_1_0.xml
+.idea/libraries/Maven__net_java_dev_jna_jna_platform_4_1_0.xml
+.idea/libraries/Maven__net_sourceforge_cssparser_cssparser_0_9_18.xml
+.idea/libraries/Maven__net_sourceforge_htmlunit_htmlunit_2_21.xml
+.idea/libraries/Maven__net_sourceforge_htmlunit_htmlunit_core_js_2_17.xml
+.idea/libraries/Maven__net_sourceforge_htmlunit_neko_htmlunit_2_21.xml
+.idea/libraries/Maven__org_apache_commons_commons_exec_1_3.xml
+.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml
+.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_1.xml
+.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_3.xml
+.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_2.xml
+.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_2_15_v20160210.xml
+.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_2_15_v20160210.xml
+.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_2_15_v20160210.xml
+.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_2_15_v20160210.xml
+.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_2_15_v20160210.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_htmlunit_driver_2_21.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_leg_rc_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_2_53_1.xml
+.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_2_53_1.xml
+.idea/libraries/Maven__org_w3c_css_sac_1_3.xml
+.idea/libraries/Maven__xalan_serializer_2_7_2.xml
+.idea/libraries/Maven__xalan_xalan_2_7_2.xml
+.idea/libraries/Maven__xerces_xercesImpl_2_11_0.xml
+.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml
+src/main/

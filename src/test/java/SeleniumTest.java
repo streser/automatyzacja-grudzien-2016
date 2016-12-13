@@ -14,6 +14,15 @@ import static org.junit.Assert.assertTrue;
  * Created by Administrator on 2016-12-13.
  */
 public abstract class SeleniumTest {
+
+    public static final By USER_ICON = By.cssSelector("img.avatar.avatar-32");
+    public static final By LOGOUT_BUTTON = By.cssSelector("button.ab-sign-out");
+    public static final By SUBMIT_BUTTON = By.id("wp-submit");
+    public static final By PASSWORD_FIELD = By.id("user_pass");
+    public static final By USER_LOGIN = By.id("user_login");
+    public static final String CORRECT_LOGIN = "warsztatautomatyzacja";
+    public static final String CORRECT_PASSWORD = "notsosimplepass123";
+
     protected WebDriver driver;
     protected String baseUrl;
 
@@ -49,5 +58,16 @@ public abstract class SeleniumTest {
         } catch (NoSuchElementException e) {
             return false;
         }
+    }
+
+    protected void tryLogin(String login, String password) {
+        insertText(USER_LOGIN, login);
+        insertText(PASSWORD_FIELD, password);
+        checkAndClick(SUBMIT_BUTTON);
+    }
+
+    protected void tryLogout() {
+        checkAndClick(USER_ICON);
+        checkAndClick(LOGOUT_BUTTON);
     }
 }

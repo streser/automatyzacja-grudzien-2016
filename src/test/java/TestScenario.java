@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 /**
  * Created by Administrator on 2016-12-13.
@@ -14,8 +14,8 @@ import static org.junit.Assert.fail;
 public class TestScenario {
     public static final String USER_NAME = "warsztatautomatyzacja";
     public static final String PASSWORD = "notsosimplepass123";
-    public static final String BaseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com";
-    private WebDriver driver;
+    public static final String BaseUrl = "http://streser.nazwa.pl/szkolenia/wp-login.php";
+    public WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
@@ -30,17 +30,24 @@ public class TestScenario {
         driver = new ChromeDriver(chromeOptions);
         baseUrl = BaseUrl;
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        open(BaseUrl);
     }
 
-    protected void open(String s) {
-        driver.get(baseUrl + "/wp-admin/");
+    public void open(String s) {
+        driver.get(baseUrl);
     }
 
     protected void tryLogOut() {
-        click(By.cssSelector("img.avatar.avatar-32"));
-        click(By.cssSelector("button.ab-sign-out"));
+        click(By.cssSelector("#wp-admin-bar-my-account > a > img"));
+        click(By.cssSelector("#wp-admin-bar-logout > a"));
+    }
+    public void assertTrueElementOnDashboard () {
+        assertTrue(isElementPresent(By.xpath("//*[@id='menu-dashboard']/a/div[3]")));
     }
 
+    public void assertFalseElementOnDashboard () {
+        assertNotEquals(driver.getCurrentUrl(),"http://streser.nazwa.pl/szkolenia/wp-login.php");
+    }
     protected void tryLogIn(String user_name, String password) {
         insertText(By.id("user_login"), user_name);
 
@@ -57,6 +64,7 @@ public class TestScenario {
         driver.findElement(by).clear();
         driver.findElement(by).sendKeys(text);
     }
+
 
     @After
     public void tearDown() throws Exception {

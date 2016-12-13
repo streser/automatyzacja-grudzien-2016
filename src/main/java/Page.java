@@ -11,4 +11,6 @@ public abstract class Page {
     public Page(WebDriver driver){
         this.driver = driver;
     }
+
+    public abstract boolean IsPostPublished(String title);
 }

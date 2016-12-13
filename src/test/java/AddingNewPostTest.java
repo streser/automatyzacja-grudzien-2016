@@ -18,8 +18,7 @@ public class AddingNewPostTest extends Scenario2{
         lp = npp.logOut();
         BlogPage bp = lp.GoToBlog();
         bp.open();
-        assertTrue(bp.postIsPublished("title"));
-        assertTrue(bp.postIsPublished("title"));
+        assertTrue(bp.IsPostPublished("title"));
 
     }
 

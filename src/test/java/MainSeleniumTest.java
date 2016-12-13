@@ -66,8 +66,11 @@ public class MainSeleniumTest {
 
     @After
     public void tearDown() throws Exception {
-        tryLogOut();
+        if(isElementPresent(USER_ICON)){
+            tryLogOut();
+        }
         driver.quit();
+
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);

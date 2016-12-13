@@ -74,4 +74,14 @@ public class BaseTest {
         click(ACCOUNT_ICON);
         click(SIGN_OUT_BUTTON);
     }
+
+    protected void tryLogIn(String username, String pass) {
+        insertText(LOGIN_FIELD, username);
+        insertText(PASSWORD_FIELD, pass);
+        click(LOGIN_BUTTON);
+    }
+
+    protected void logIn() {
+        tryLogIn(CORRECT_LOGIN, CORRECT_PASSWORD);
+    }
 }

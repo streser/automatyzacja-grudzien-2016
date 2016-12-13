@@ -1,7 +1,7 @@
 import org.junit.Test;
 
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
+        import static org.hamcrest.core.IsEqual.equalTo;
+        import static org.junit.Assert.assertThat;
 
 /**
  * Created by Administrator on 2016-12-12.

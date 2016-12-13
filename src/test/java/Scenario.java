@@ -3,6 +3,8 @@ import org.junit.Before;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,13 +30,19 @@ public class Scenario {
         chromeOptions.addArguments("--start-maximized");
 
         driver = new ChromeDriver(chromeOptions);
-        baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com/";
+        baseUrl = "http://streser.nazwa.pl/szkolenia/wp-login.php";
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
+
+        //WebDriverWait wait = new WebDriverWait(webDriver, timeoutInSeconds);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id<locator>));
+
+
+
     }
 
     protected void open() {
-        driver.get(baseUrl + "wp-login.php?redirect_to=https%3A%2F%2Fszkolenieautoamatyzacjatech.wordpress.com%2Fwp-admin%2F&reauth=1");
+        driver.get(baseUrl);
     }
 
     protected void tryLogOut() {

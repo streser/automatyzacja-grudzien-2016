@@ -46,7 +46,7 @@ public class LoginTest extends Scenario {
 
         //THEN
 
-        assertTrue(isElementPresent(By.id("loginform")));
+        assertTrue(isElementPresent(By.id("login")));
 
     }
 

@@ -30,8 +30,9 @@ public class TestScenario {
     }
 
     protected void tryLogOut() {
-        driver.findElement(By.cssSelector("img.avatar.avatar-32")).click();
-        driver.findElement(By.cssSelector("button.ab-sign-out")).click();
+        //driver.findElement(By.cssSelector("img.avatar.avatar-32")).click();
+        //driver.findElement(By.cssSelector("button.ab-sign-out")).click();
+        driver.findElement(By.linkText("Log Out")).click();
     }
 
     protected void tryLogIn() {

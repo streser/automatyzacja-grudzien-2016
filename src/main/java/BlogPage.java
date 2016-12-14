@@ -32,5 +32,21 @@ public class BlogPage extends Page {
         */
         return driver.getPageSource().contains(title);
     }
+
+    public LoginPage LeaveComment(String s, String title) {
+        driver.findElement(By.linkText(title)).click();
+
+        driver.findElement(By.id("author")).sendKeys("author");
+        driver.findElement(By.id("email")).sendKeys("email");
+        driver.findElement(By.id("url")).sendKeys("email");
+        driver.findElement(By.id("comment")).sendKeys(s);
+        driver.findElement(By.cssSelector("#submit")).click();
+
+        driver.findElement(By.cssSelector("#meta-2 > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)")).click();
+
+        return new LoginPage(driver);
+
+
+    }
 }
 

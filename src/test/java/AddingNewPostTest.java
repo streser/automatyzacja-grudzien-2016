@@ -28,6 +28,10 @@ public class AddingNewPostTest extends Scenario2{
         lp = npp.logOut();
         BlogPage bp = lp.GoToBlog();
         bp.isPostPublished(name.toString());
+        bp.LeaveComment("Add New Comment", name.toString());
+        //ap = lp.logIn();
+
+
 
     }
 

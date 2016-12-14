@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -38,10 +39,11 @@ public class AddBlogPostTest  {
 
         LoginPage lp = new LoginPage(driver);
         lp.open();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         //po zalogowaniu się przejdziemy do strony Admin Page, więc:
         AdminPage ap = lp.logIn(CORRECT_LOGIN, CORRECT_PASSWORD);
-        Assert.assertTrue(ap.isElementPresent(WRITE_BUTTON));
+       // do poprawy Assert.assertTrue(ap.isElementPresent(WRITE_BUTTON));
 
         //na stronie Admin Page będziemy chcieli dodać nowy post
         AddNewPostPage anp = ap.goToNewPost();

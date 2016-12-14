@@ -38,7 +38,7 @@ public class Scenario {
 
 //        //ajax - jak wyswietla sie np. komunikat o Errorze w logowaniu bez przeładowania strony -wtedy Selenium nam nie będzie działać i na to jest rozwiązanie czekanie wait
 //
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("login_error"))); //tu jest dużo opcji do wyboru- można czekać na wiele rzeczy i to jest ważne narzędzie
 
     }

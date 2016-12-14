@@ -11,6 +11,7 @@ public class AdminPage extends Page {
     }
 
     public AddNewPostPage goToNewPost() {
+        //driver.findElement(By.xpath("//*[@id=\"welcome-panel\"]/div/div/div[2]/ul/li[2]/a")).click();
         driver.findElement(By.linkText("Write your first blog post")).click();
         return new AddNewPostPage(driver);
     }

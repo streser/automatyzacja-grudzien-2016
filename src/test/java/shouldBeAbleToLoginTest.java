@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(JUnitParamsRunner.class)
-public class shouldBeAbleToLogin extends selleniumBaseScenario {
+public class shouldBeAbleToLoginTest extends selleniumBaseScenario {
 
     @Test
     public void shouldBeAbleToLogIn() throws Exception {

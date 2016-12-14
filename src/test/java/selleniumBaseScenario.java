@@ -41,6 +41,8 @@ public class selleniumBaseScenario {
         //clickElement(By.cssSelector("#wp-admin-bar-logout > a"));
         //clickElement(By.linkText("Wyloguj się"));
         //clickElement(By.xpath("//*[@id=\"wp-admin-bar-logout\"]/a"));
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#menu-posts > a > div.wp-menu-name")));
     }
 
     protected void openPageUrl(String urlPage) {

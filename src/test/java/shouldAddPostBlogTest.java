@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import java.util.UUID;
 
-public class shouldAddPostBlog extends selleniumBaseScenario {
+public class shouldAddPostBlogTest extends selleniumBaseScenario {
     @Test
     public void shouldAddPostBlog() {
         LoginPage loginpage = new LoginPage(driver);

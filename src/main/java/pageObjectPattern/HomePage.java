@@ -18,7 +18,7 @@ public class HomePage extends Page {
     public boolean isPostPublished(String title) {
         boolean isPostPublished = true;
         try {
-           waitForElementPresence(By.xpath("//a[contains(text()='"+title.toUpperCase()+"')]"));
+           waitForElementPresence(By.xpath("//*[contains(text(),'"+title+"')]"));
         } catch (NoSuchElementException e){
          isPostPublished = false;
         }

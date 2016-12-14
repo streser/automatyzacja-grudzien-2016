@@ -20,4 +20,10 @@ public class MainPage extends Page {
         driver.findElement(By.linkText("Dodaj nowy")).click();
         return new AddNewPostPage(driver);
     }
+    public AllPostsViewPage goToAllPostsViewPage() {
+
+        driver.findElement(POST_MENU).click();
+        driver.findElement(By.linkText("Wszystkie")).click();
+        return new AllPostsViewPage(driver);
+    }
 }

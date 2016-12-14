@@ -1,11 +1,19 @@
+/**
+ * Created by User on 13-Dec-16.
+ */
 import org.junit.Test;
 
-im import static junit.framework.TestCase.assertTrue;
+import java.util.UUID;
+
+import static junit.framework.TestCase.assertTrue;
 
 /**
  * Created by Administrator on 2016-12-13.
  */
 public class AddingNewPostTest extends Scenario2{
+
+
+
 
 
     @Test
@@ -14,11 +22,12 @@ public class AddingNewPostTest extends Scenario2{
         LoginPage lp = new LoginPage(driver);
         AdminPage ap = lp.logIn();
         NewPostPage npp = ap.goToNewPostPage();
-        npp.publishNewPage("title", "body");
+        UUID name = UUID.randomUUID();
+
+        npp.publishNewPage(name.toString(), "body");
         lp = npp.logOut();
         BlogPage bp = lp.GoToBlog();
-        bp.open();
-        assertTrue(bp.IsPostPublished("title"));
+        bp.isPostPublished(name.toString());
 
     }
 

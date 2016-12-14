@@ -20,6 +20,7 @@ public class LoginPage extends Page{
     }
 
     public MainAdminPage login(String username, String password) {
+        waitForElement(USERNAME_FIELD);
         insertText(USERNAME_FIELD, username);
         insertText(PASSWORD_FIELD, password);
         checkAndClick(SUBMIT_BUTTON);

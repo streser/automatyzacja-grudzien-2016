@@ -24,4 +24,12 @@ public class BlogPage extends Page {
         List<WebElement> list = driver.findElements(POSTS_TITLE);
         Assert.assertEquals(list.get(0).getText(),title.toUpperCase());
     }
+
+    public PostDetailsPage goToPost(int i) {
+        List<WebElement> list = driver.findElements(POSTS_TITLE);
+        click(list.get(i));
+        return new PostDetailsPage(driver);
+    }
+
+
 }

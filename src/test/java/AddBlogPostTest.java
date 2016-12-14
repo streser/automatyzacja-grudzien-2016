@@ -16,7 +16,6 @@ public class AddBlogPostTest extends TestScenario {
           anp.LogOut();
           PostPage pp = new PostPage(driver);
           pp.findPost("title");
-
         }
 }
 

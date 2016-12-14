@@ -3,6 +3,7 @@ import junitparams.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import static org.junit.Assert.assertFalse;
@@ -31,10 +32,10 @@ public class LoginTest extends TestScenario {
         driver.get(baseUrl + "wp-login.php?redirect_to=https%3A%2F%2Fszkolenieautoamatyzacjatech.wordpress.com%2Fwp-admin%2F&reauth=1/");
 
         tryLogin("notsosimplepass123", "Warsztatautomatyzacja");
-        assertTrue(isElementPresent(By.cssSelector("img.avatar.avatar-32")));
-        driver.findElement(By.cssSelector("img.avatar.avatar-32")).click();
-        driver.findElement(By.cssSelector("button.ab-sign-out")).click();
+        assertTrue(isElementPresent(By.id("welcome-panel")));
+
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.xpath("//*[@id=\"wp-admin-bar-my-account\"]/a/img"))).build().perform();
+        action.moveToElement(driver.findElement(By.linkText("Log Out"))).click().build().perform();
     }
 }
-
-

@@ -1,8 +1,12 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import sun.security.x509.AVA;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.*;
 
 /**
  * Created by Administrator on 2016-12-13.
@@ -30,7 +34,13 @@ public class AddNewPostPage extends BasePage {
     }
 
     public LogOutPage logOut() {
-        driver.findElement(AVATAR_ICON).sendKeys("");
+        Point coordinates = driver.findElement(AVATAR_ICON).getLocation();
+        try {
+            new Robot().mouseMove(coordinates.getX(),coordinates.getY()+80);
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+        waitForVisible(SIGN_OUT_LINK);
         click(SIGN_OUT_LINK);
         return new LogOutPage(driver);
     }

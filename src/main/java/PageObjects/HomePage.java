@@ -19,12 +19,12 @@ public class HomePage extends BasePage {
 
     public void verifyPublishedPost(String title) {
 
-        List<WebElement> titles = driver.findElements(By.cssSelector("h1#entry-title > a"));
+        List<WebElement> titles = driver.findElements(By.cssSelector("h1.entry-title > a"));
         List<String> titlesString = new ArrayList<String>();
         for(WebElement t : titles){
             titlesString.add(t.getText());
         }
 
-        assertTrue(titlesString.contains(title));
+        assertTrue(titlesString.contains(title.toUpperCase()));
     }
 }

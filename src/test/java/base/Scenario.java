@@ -23,7 +23,7 @@ public class Scenario {
     protected final String CORRECT_LOGIN = "warsztatautomatyzacja";
     protected final String CORRECT_PASSWORD = "notsosimplepass123";
     protected final String INCORRECT_PASSWORD = "dupa123";
-    protected final String BASE_URL = "http://streser.nazwa.pl/szkolenia/wp-login.php";
+    protected final String BASE_URL = "http://streser.nazwa.pl/szkolenia/";
     private final By SIGN_OUT_BUTTON = By.cssSelector("button.ab-sign-out");
 
     protected WebDriver driver;
@@ -39,7 +39,6 @@ public class Scenario {
         driver = new ChromeDriver(chromeOptions);
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get(BASE_URL);
     }
 
     @After

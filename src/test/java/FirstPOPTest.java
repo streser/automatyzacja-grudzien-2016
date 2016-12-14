@@ -13,6 +13,7 @@ public class FirstPOPTest extends Scenario {
     @Test
     public void shouldLogInAndLogOut(){
         LoginPage loginPage = new LoginPage(driver);
+        loginPage.open(BASE_URL+ "wp-login.php");
         AdminPage adminPage = loginPage.logIn();
 
         AddNewPostPage addNewPostPage = adminPage.openAddNewPostPage();

@@ -3,6 +3,8 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by Administrator on 2016-12-13.
@@ -15,7 +17,7 @@ public abstract class BasePage {
     }
 
     public void open(String url) {
-
+        driver.get(url);
     }
 
     protected boolean isElementPresent(By by) {
@@ -36,4 +38,8 @@ public abstract class BasePage {
         driver.findElement(locator).click();
     }
 
+
+    protected void waitForVisible(By locator) {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 }

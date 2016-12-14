@@ -34,6 +34,7 @@ public class LoginPage extends BasePage {
     }
 
     protected void tryLogIn(String username, String pass) {
+        waitForVisible(LOGIN_FIELD);
         insertText(LOGIN_FIELD, username);
         insertText(PASSWORD_FIELD, pass);
         click(LOGIN_BUTTON);

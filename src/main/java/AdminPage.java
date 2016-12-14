@@ -15,11 +15,6 @@ public class AdminPage extends Page {
     }
 
     public AddNewPostPage goToNewPostPage() {
-        return null;
-
-    }
-
-    public AddNewPostPage goToPostPage() {
         checkAndClick(POSTS_BUTTON);
         return new AddNewPostPage(driver);
 

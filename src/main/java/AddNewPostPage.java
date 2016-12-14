@@ -13,7 +13,7 @@ public class AddNewPostPage extends Page {
 
     public void publishNewPost(String title, String text) {
         checkAndClick(By.cssSelector("#wpbody-content > div.wrap > h2 > a"));
-        insertText(By.id("title"),"Title");
+        insertText(By.id("title"),"Title-wojtys-tomtom");
         checkAndClick(By.id("publish"));
 
     }

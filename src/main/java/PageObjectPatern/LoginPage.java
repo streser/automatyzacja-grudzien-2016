@@ -16,10 +16,11 @@ public class LoginPage extends Page {
 
     }
 
-    public AdminPage logIn(String login, String password) {
+    public MainPage logIn(String login, String password) {
         insertTekst(By.id("user_login"), login);
         insertTekst(By.id("user_pass"), password);
         driver.findElement(By.id("wp-submit")).click();
-        return new AdminPage(driver);
+        return new MainPage(driver);
     }
+
 }

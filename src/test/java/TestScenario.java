@@ -39,7 +39,7 @@ public class TestScenario {
     }
 
     public void open(String baseUrl) {
-       driver.get(baseUrl);
+        driver.get(baseUrl);
     }
 
     protected void tryLogOut() {

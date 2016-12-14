@@ -1,8 +1,10 @@
 import PageObjectPatern.AddNewPostPage;
-import PageObjectPatern.AdminPage;
 import PageObjectPatern.HomePage;
+import PageObjectPatern.MainPage;
 import PageObjectPatern.LoginPage;
 import org.junit.Test;
+
+import java.util.UUID;
 
 import static junit.framework.Assert.assertTrue;
 
@@ -13,13 +15,17 @@ public class WriteNewPostTest extends Scenarios {
 
     @Test
     public void shouldWriteNewPost(){
+
         LoginPage lp = new LoginPage(driver);
-        AdminPage ap = lp.logIn("login","pasword");
+        lp.open("https://streser.nazwa.pl/szkolenia/wp-admin/");
+        MainPage ap = lp.logIn("Warsztatautomatyzacja","notsosimplepass123");
         AddNewPostPage adp = ap.goToNewPost();
-        adp.publishNewPost("title","text");
+        UUID temp = UUID.randomUUID();
+        adp.publishNewPost(temp.toString(),"text");
         adp.logOut();
         HomePage hp = new HomePage(driver);
-        assertTrue(hp.iSPostPublishPost("tytul"));
+        hp.open("http://streser.nazwa.pl/szkolenia/");
+        assertTrue(hp.iSPostPublishPost(temp.toString()));
 
     }
 }

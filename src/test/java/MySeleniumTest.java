@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 
-//@RunWith(JUnitParamsRunner.class)
+@RunWith(JUnitParamsRunner.class)
 
 public class MySeleniumTest extends TestScenario {
 
@@ -25,12 +25,18 @@ public class MySeleniumTest extends TestScenario {
     }
     //Test na negatywne logowanie
 
-//    @Test
-//    @Parameters({"Warsztatautomatyzacja, notsosimplepass123"})
-//    public void shouldBeFailedLogin(String login, String passwords)throws Exception{
-//        driver.get(baseUrl + "wp-login.php");
-//        tryLogIn();
-//        assertTrue(isElementPresent(By.id("login_error")));
-
-//    }
+    @Test
+   /* @Parameters({
+            "Warsztatautomatyzacja, krowa",
+            "akrowa, notsosimplepass123",
+            "krowa, krowa",
+            ", notsosimplepass123",
+            "Warsztatautomatyzacja, "
+    })
+    */
+    public void sshouldBeFailedLogin() throws Exception {
+        driver.get(baseUrl + "wp-login.php");
+        tryLogIn();
+        assertFalse(isElementPresent(By.cssSelector("#login_error")));
+    }
 }

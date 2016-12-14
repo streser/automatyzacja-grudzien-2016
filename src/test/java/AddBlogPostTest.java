@@ -6,17 +6,19 @@ import pageobject.*;
  */
 public class AddBlogPostTest extends SeleniumTest {
 
-    public static final String CORRECT_LOGIN = "warsztatautomatyzacja";
-    public static final String CORRECT_PASSWORD = "notsosimplepass123";
+    private static final String CORRECT_LOGIN = "warsztatautomatyzacja";
+    private static final String CORRECT_PASSWORD = "notsosimplepass123";
+    public static final String TITLE = "title";
+    public static final String TEXT = "text";
 
     @Test
     public void should() {
         LoginPage lp = new LoginPage(driver);
-        AdminPage ap = lp.login(CORRECT_LOGIN,CORRECT_PASSWORD);
+        MainAdminPage ap = lp.login(CORRECT_LOGIN,CORRECT_PASSWORD);
         PostsPage pp = ap.goToPostPage();
-        pp.addNewPost("title", "text");
+        pp.addNewPost(TITLE, TEXT);
         pp.logOut();
         BlogPage bp = new BlogPage(driver);
-        bp.verifyPostTitle("title");
+        bp.verifyPostTitle(TITLE);
     }
 }

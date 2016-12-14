@@ -35,15 +35,16 @@ public abstract class Page {
         driver.findElement(by).click();
     }
 
-    private void waitForElement(By by) {
+    protected void waitForElement(By by) {
         WebDriverWait wait= new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
+
     protected void mouseOver(By by) {
         waitForElement(by);
         Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(by)).perform();
+        action.moveToElement(driver.findElement(by)).sendKeys("\t").perform();
     }
 
     protected void check(By by) {
@@ -63,9 +64,5 @@ public abstract class Page {
         driver.get(url);
     }
 
-    public void logOut() {
-        mouseOver(USER_ICON);
-        mouseOver(LOGOUT_BUTTON);
-        checkAndClick(LOGOUT_BUTTON);
-    }
+
 }

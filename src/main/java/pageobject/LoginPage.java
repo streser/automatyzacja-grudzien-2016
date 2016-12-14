@@ -19,10 +19,10 @@ public class LoginPage extends Page{
         open("http://streser.nazwa.pl/szkolenia/wp-login.php");
     }
 
-    public AdminPage login(String username, String password) {
+    public MainAdminPage login(String username, String password) {
         insertText(USERNAME_FIELD, username);
         insertText(PASSWORD_FIELD, password);
         checkAndClick(SUBMIT_BUTTON);
-        return new AdminPage(driver);
+        return new MainAdminPage(driver);
     }
 }

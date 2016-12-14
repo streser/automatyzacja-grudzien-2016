@@ -33,8 +33,9 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage insertUserLogin(String login) {
+    public LoginPage insertUserLogin(String login) throws InterruptedException {
         waitForElement(userLoginField);
+        Thread.sleep(1000);
         userLoginField.clear();
         userLoginField.sendKeys(login);
         return this;
@@ -47,7 +48,7 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public MainPage logInToBlog(String login, String password) {
+    public MainPage logInToBlog(String login, String password) throws InterruptedException {
         insertUserLogin(login);
         insertUserPassword(password);
         pressSubmitButton();

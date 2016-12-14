@@ -27,6 +27,9 @@ public class MainPage extends BasePage {
     @FindBy(linkText = "Log Out")
     private WebElement logOutButton;
 
+    @FindBy(id = "menu-comments")
+    private WebElement commentstTabSideDashboardButton;
+
     public PostPage goToPostsPage() {
         waitForElement(postTabSideDashboardButton);
         postTabSideDashboardButton.click();
@@ -46,6 +49,12 @@ public class MainPage extends BasePage {
     public void logOut() throws InterruptedException {
         mouseHoverMyAccount();
         pressLogOut();
+    }
+
+    public CommentsPage goToCommentsPage() {
+        waitForElement(commentstTabSideDashboardButton);
+        commentstTabSideDashboardButton.click();
+        return new CommentsPage(driver);
     }
 }
 

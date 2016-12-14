@@ -5,6 +5,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import sun.rmi.runtime.Log;
 
 /**
  * Created by Administrator on 2016-12-13.
@@ -13,6 +14,7 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//a[contains(text()='Some text')]")
     private WebElement post;
+
 
 
     public HomePage(WebDriver driver) {
@@ -33,6 +35,14 @@ public class HomePage extends BasePage {
         }
         return isPublished;
     }
+
+    public ExistingPostPage goToPostByTitle(String title) {
+        waitForElementBy(By.xpath("//*[contains(text(),'"+title+"')]"));
+        driver.findElement(By.xpath("//*[contains(text(),'"+title+"')]")).click();
+        return new ExistingPostPage(driver);
+    }
+
+
 }
 
 //

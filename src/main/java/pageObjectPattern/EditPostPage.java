@@ -15,6 +15,7 @@ public class EditPostPage extends BasePage {
         super(driver);
     }
 
+
     @FindBy(id ="message")
     private WebElement message;
 

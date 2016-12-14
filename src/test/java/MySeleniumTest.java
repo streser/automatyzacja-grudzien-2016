@@ -33,10 +33,11 @@ public class MySeleniumTest extends TestScenario {
             ", notsosimplepass123",
             "Warsztatautomatyzacja, "
     })
-    */
+
     public void sshouldBeFailedLogin() throws Exception {
         driver.get(baseUrl + "wp-login.php");
         tryLogIn();
         assertFalse(isElementPresent(By.cssSelector("#login_error")));
     }
+       */
 }

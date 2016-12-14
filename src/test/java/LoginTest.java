@@ -14,8 +14,8 @@ public class LoginTest extends BaseTest {
         open(BASE_URL);
         logIn();
         assertTrue(isElementPresent(ACCOUNT_ICON));
-        signOut();
-        assertTrue(isElementPresent(SOME_BUTTON_ON_SIGN_OUT_PAGE));
+        /*signOut();
+        assertTrue(isElementPresent(SOME_BUTTON_ON_SIGN_OUT_PAGE));*/
     }
 
     @Test

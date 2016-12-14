@@ -19,7 +19,7 @@ public class BaseTest {
     protected final By LOGIN_FIELD = By.id("user_login");
     protected final By PASSWORD_FIELD = By.id("user_pass");
     protected final By LOGIN_BUTTON = By.id("wp-submit");
-    protected final By ACCOUNT_ICON = By.cssSelector("img.avatar.avatar-32");
+    protected final By ACCOUNT_ICON = By.cssSelector("li#wp-admin-bar-my-account");
     protected final By SOME_BUTTON_ON_SIGN_OUT_PAGE = By.cssSelector("button.menu-toggle.x");
     protected final By LOGIN_ERROR_MESSAGE = By.id("login_error");
     protected final String CORRECT_LOGIN = "warsztatautomatyzacja";

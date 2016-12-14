@@ -1,10 +1,15 @@
-import org.junit.After;
-import org.junit.Before;
+import com.thoughtworks.selenium.SeleneseTestBase;
+import org.junit.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +18,7 @@ import static org.junit.Assert.fail;
 /**
  * Created by Administrator on 2016-12-13.
  */
-public class MainSeleniumTest {
+public class ScenarioTest {
 
 
     public static final String CORRECT_LOGIN = "warsztatautomatyzacja";
@@ -27,29 +32,12 @@ public class MainSeleniumTest {
 
     @Before
     public void setUp() throws Exception {
-//        driver = new FirefoxDriver();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
         driver = new ChromeDriver(chromeOptions);
-        baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com/";
+        baseUrl = "http://streser.nazwa.pl/szkolenia/wp-login.php";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
-
-    public void openPage(){
-        driver.get("https://szkolenieautoamatyzacjatech.wordpress.com/wp-login.php?redirect_to=https%3A%2F%2Fszkolenieautoamatyzacjatech.wordpress.com%2Fwp-admin%2F&reauth=1");
-    }
-    public void tryLogIn(String login, String password) {
-        insertText(By.id("user_login"), login);
-        insertText(By.id("user_pass"), password);
-        driver.findElement(By.id("rememberme")).click();
-        driver.findElement(By.id("wp-submit")).click();
-    }
-
-    public void insertText(By by, String s) {
-        driver.findElement(by).clear();
-        driver.findElement(by).sendKeys(s);
-    }
-
     public boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
@@ -58,22 +46,20 @@ public class MainSeleniumTest {
             return false;
         }
     }
-
     public void tryLogOut() {
         driver.findElement(USER_ICON).click();
         driver.findElement(LOGOUT_ICON).click();
     }
-
     @After
     public void tearDown() throws Exception {
-        if(isElementPresent(USER_ICON)){
+        if (isElementPresent(USER_ICON)) {
             tryLogOut();
         }
         driver.quit();
 
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
+            SeleneseTestBase.fail(verificationErrorString);
         }
     }
 }

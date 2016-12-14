@@ -6,8 +6,7 @@ import static org.junit.Assert.*;
 
 import org.junit.runner.RunWith;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 /**
@@ -15,18 +14,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 @RunWith(JUnitParamsRunner.class)
 
-public class LoginTest extends MainSeleniumTest {
+public class LoginPageTest extends ScenarioTest {
+
 
     public static final By INCORRECT_LOGIN_ERROR = By.id("login_error");
 
     @Test
     public void shouldLogInWithCorrectCredentials() throws Exception {
         //given
-        openPage();
+        LoginPage lp = new LoginPage(driver);
+        lp.openPage();
         //when
-        tryLogIn(CORRECT_LOGIN, CORRECT_PASSWORD);
+        lp.tryLogIn(CORRECT_LOGIN, CORRECT_PASSWORD);
         //than
-        assertTrue(isElementPresent(By.cssSelector("h2")));
+        assertTrue(lp.isElementPresent(By.cssSelector("h2")));
     }
 
 
@@ -34,13 +35,12 @@ public class LoginTest extends MainSeleniumTest {
     @Parameters({"EwaPietrus, samplepassword", "jadjf, hfiweuh", " , hfiweuh", " fgdrfghdgf, "})
     public void shouldNotLogInWithIncorrectCredentials(String login, String password) {
         //given
-        openPage();
+        LoginPage lp = new LoginPage(driver);
+        lp.openPage();
         //than
-        tryLogIn(login, password);
+        lp.tryLogIn(login, password);
         //than
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(INCORRECT_LOGIN_ERROR));
-
+        lp.waitForElement(INCORRECT_LOGIN_ERROR);
 
     }
 }

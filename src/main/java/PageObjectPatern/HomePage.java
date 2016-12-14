@@ -19,4 +19,17 @@ return driver.getPageSource().contains(tytul);
     public void logOut(){
 
     }
+
+    public void publishNewComment() {
+
+    }
+
+    public boolean isNewCommentPublished(String comment) {
+        return driver.getPageSource().contains(comment);
+    }
+
+
+    public PostPage moveToNewPost() {
+        return new PostPage(driver);
+    }
 }

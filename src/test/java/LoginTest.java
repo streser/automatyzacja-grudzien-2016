@@ -19,7 +19,7 @@ public class LoginTest extends TestScenario {
         tryLogIn(CORRECT_LOGIN, CORRECT_PASSWORD);
 
         assertTrue(isElementPresent(USER_ICON));
-        tryLogOut();
+//        tryLogOut();
     }
 //TODO piszemy test na negatywne logowanie
 
@@ -29,7 +29,7 @@ public class LoginTest extends TestScenario {
         driver.get(baseUrl + LOGIN_PAGE_PATH);
 
         tryLogIn(login, password);
-//        driver.close();
+        driver.close();
         Assert.assertFalse(isElementPresent(USER_ICON));
     }
 }

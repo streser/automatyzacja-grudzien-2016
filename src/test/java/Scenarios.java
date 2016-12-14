@@ -22,7 +22,6 @@ public class Scenarios {
         chromeOptions.addArguments("--start-maximized");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().deleteAllCookies();
-
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 

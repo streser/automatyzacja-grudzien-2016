@@ -20,7 +20,7 @@ public class TestScenario {
     public static final String CORRECT_PASSWORD = "notsosimplepass123";
     public static final String LOGIN_PAGE_PATH = "/wp-login.php?redirect_to=https%3A%2F%2Fszkolenieautoamatyzacjatech.wordpress.com%2Fwp-admin%2F&reauth=1";
     protected WebDriver driver;
-    protected String baseUrl;
+    protected String baseUrl ="http://streser.nazwa.pl/szkolenia";
     //    private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
 

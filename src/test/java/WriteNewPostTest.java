@@ -1,7 +1,4 @@
-import PageObjectPatern.AddNewPostPage;
-import PageObjectPatern.HomePage;
-import PageObjectPatern.MainPage;
-import PageObjectPatern.LoginPage;
+import PageObjectPatern.*;
 import org.junit.Test;
 
 import java.util.UUID;
@@ -26,6 +23,11 @@ public class WriteNewPostTest extends Scenarios {
         HomePage hp = new HomePage(driver);
         hp.open("http://streser.nazwa.pl/szkolenia/");
         assertTrue(hp.iSPostPublishPost(temp.toString()));
+        PostPage pp = hp.moveToNewPost();
+        pp.publishNewComment();
+        assertTrue(hp.isNewCommentPublished("xx"));
 
     }
+
+
 }

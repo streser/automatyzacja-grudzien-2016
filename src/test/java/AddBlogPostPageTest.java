@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by Administrator on 2016-12-13.
  */
-public class AddBlogPostPage extends TestScenario {
+public class AddBlogPostPageTest extends TestScenario {
 
     @Test
     public void should() throws InterruptedException {

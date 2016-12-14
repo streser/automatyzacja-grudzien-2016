@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.codesprinters</groupId>
-    <artifactId>c:\szkolenie</artifactId>
+    <artifactId>szkolenie</artifactId>
     <version>1.0-SNAPSHOT</version>
     <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependencies
@@ -22,6 +22,13 @@
             <artifactId>selenium-java</artifactId>
             <version>2.53.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/pl.pragmatists/JUnitParams -->
+        <dependency>
+            <groupId>pl.pragmatists</groupId>
+            <artifactId>JUnitParams</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
     </dependencies>
 
 

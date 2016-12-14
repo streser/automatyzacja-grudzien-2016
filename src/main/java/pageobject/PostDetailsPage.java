@@ -12,7 +12,4 @@ public class PostDetailsPage extends Page {
         super(driver);
     }
 
-    public void addComment() {
-
-    }
 }

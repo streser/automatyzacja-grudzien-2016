@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -9,7 +10,8 @@ public class AdminPage extends Page {
         super(driver);
     }
 
-    public AddNewPostPage goToNewPost() {       //metoda zwraca (wartość?/obiekt?) typu AddNewPostPage -  patrz wyjaśnienie analogicznie jak w LoginPage
+    public AddNewPostPage goToNewPost() {
+        driver.findElement(By.linkText("Write your first blog post")).click();
         return new AddNewPostPage(driver);
     }
 }

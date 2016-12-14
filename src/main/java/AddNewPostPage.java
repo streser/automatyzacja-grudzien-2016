@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -8,10 +9,11 @@ public class AddNewPostPage extends Page{
         super(driver);
     }
 
-    public void publishNewPost(String s) {
+    public BlogPrewievPage publishNewPost(String tytulPostu, String trescPostu) {
+        insertText(By.id("title"), tytulPostu);
+        insertText(By.id("tinymce"), trescPostu);
+        driver.findElement(By.id("publish")).click();
+        return new BlogPrewievPage(driver);
     }
 
-    public LoginPage logOut() {
-        return new LoginPage(driver);
-    }
 }

@@ -8,11 +8,9 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends Page{
     public HomePage(WebDriver driver) {
         super(driver);
-
     }
 
-
     public boolean postIsPublished(String title) {
-        return false;
+       return driver.getPageSource().contains(title);
     }
 }

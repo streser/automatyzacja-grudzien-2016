@@ -21,7 +21,7 @@ public class MySeleniumTest extends TestScenario {
         tryLogIn();
         //assertTrue(isElementPresent(By.cssSelector("img.avatar.avatar-32")));
         assertTrue(isElementPresent(By.xpath("//img[contains(@src,'http://1.gravatar.com/avatar/3d0edd1f6873a830067ba4cd7fa599c4?s=26&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D26&r=G')]")));
-        tryLogOut();
+        //tryLogOut();
     }
     //Test na negatywne logowanie
 

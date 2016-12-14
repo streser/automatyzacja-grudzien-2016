@@ -24,4 +24,9 @@ public class HomePage extends Page {
         }
         return isPostPublished;
     }
+
+    public AddNewComment goToLastPost(String lKtitle) {
+        wai
+       click(By.cssSelector("#post-1003 > header > div > span.comments-link > a"));
+    }
 }

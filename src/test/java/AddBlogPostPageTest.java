@@ -20,6 +20,9 @@ public class AddBlogPostPageTest extends TestScenario {
         HomePage homePage = loginPage.backToBlog();
         assertTrue(homePage.isPostPublished("LKtitle"));
 
+        AddNewComment addNewComment = homePage.goToLastPost ("LKtitle");
+        addNewComment.publishNewComment ("LKcomment");
+
 
     }
 

@@ -1,32 +1,22 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
-import java.awt.*;
-
-/**
- * Created by Administrator on 2016-12-14.
- */
 public abstract class LoggedPage extends BasePage {
 
-    private static final By AVATAR_ICON = By.cssSelector("li#wp-admin-bar-my-account");
-    private static final By SIGN_OUT_LINK = By.cssSelector("li#wp-admin-bar-logout > a");
+    private static final By AVATAR_ICON = By.cssSelector("li#wp-admin-bar-my-account > a");
+    private static final By SIGN_OUT_LINK = By.linkText("Log Out");
 
     public LoggedPage(WebDriver driver) {
         super(driver);
     }
 
     public LogOutPage logOut() {
-        Point coordinates = driver.findElement(AVATAR_ICON).getLocation();
-        try {
-            new Robot().mouseMove(coordinates.getX(), coordinates.getY() + 80);
-        } catch (AWTException e) {
-            e.printStackTrace();
-        }
-        waitForVisible(SIGN_OUT_LINK);
-        click(SIGN_OUT_LINK);
+        Actions a = new Actions(driver);
+        a.moveToElement(driver.findElement(AVATAR_ICON)).build().perform();
+        a.moveToElement(driver.findElement(SIGN_OUT_LINK)).click().build().perform();
         return new LogOutPage(driver);
     }
 }

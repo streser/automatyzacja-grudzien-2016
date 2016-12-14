@@ -35,12 +35,12 @@ public class TestScenario {
     }
 
     protected void tryLogIn() {
-        InsertText(By.id("user_login"), "Warsztatautomatyzacja");
-        InsertText(By.id("user_pass"), "notsosimplepass123");
+        insertText(By.id("user_login"), "Warsztatautomatyzacja");
+        insertText(By.id("user_pass"), "notsosimplepass123");
         driver.findElement(By.id("wp-submit")).click();
     }
 
-    private void InsertText(By byElement, String text) {
+    private void insertText(By byElement, String text) {
         driver.findElement(byElement).clear();
         driver.findElement(byElement).sendKeys(text);
     }

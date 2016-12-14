@@ -15,9 +15,9 @@ public class MyFirstSeleniumTest extends Scenario {
     @Test
     public void testSELENIUMIDE() throws Exception {
         openWebsite();
-        tryLogin("Warsztatautomatyzacja", "notsosimplepass123");
+        //tryLogin("Warsztatautomatyzacja", "notsosimplepass123");
         //assertEquals("Kokpit ‹ Site Title — WordPress", driver.getTitle());
-        logout("button.ab-sign-out");
+       // logout("button.ab-sign-out");
     }
 
 

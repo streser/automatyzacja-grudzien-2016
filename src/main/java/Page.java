@@ -4,10 +4,16 @@
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Page {
+
+    public static final By ICON = By.xpath("//*[@id=\"wp-admin-bar-my-account\"]/a");
+    public static final By BUTTON = By.xpath("//*[@id=\"wp-admin-bar-logout\"]/a");
+
+
     protected WebDriver driver;
 
     public Page(WebDriver driver) {
@@ -34,4 +40,15 @@ public class Page {
         driver.findElement(by).sendKeys(text);
     }
 
+    protected void mouseOver(By by) {
+        waitForElement(by);
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(by)).perform();
+    }
+
+    public void logOut() {
+        mouseOver(ICON);
+        mouseOver(BUTTON);
+        checkAndClick(BUTTON);
+    }
 }

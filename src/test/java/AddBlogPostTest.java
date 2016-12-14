@@ -1,7 +1,7 @@
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-public class AddBlogPostTest extends TestScenario {
+public class AddBlogPostTest extends TestScenario  {
 
     public static final String CORRECT_LOGIN = "warsztatautomatyzacja";
     public static final String CORRECT_PASSWORD = "notsosimplepass123";
@@ -13,7 +13,7 @@ public class AddBlogPostTest extends TestScenario {
           //AdminPage ap = lp.logIn();
           AddNewPostPage anp = ap.goToNewPostPage();
           anp.publishNewPost("title", "text");
-          anp.LogOut();
+          anp.logOut();
           PostPage pp = new PostPage(driver);
           pp.findPost("title");
         }

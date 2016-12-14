@@ -18,9 +18,5 @@ public class AddNewPostPage extends Page{
         driver.findElement(By.id("publish")).click();
     }
 
-    public LoginPage logOut() {
 
-        tryLogOut();
-        return new LoginPage(driver);
-    }
 }

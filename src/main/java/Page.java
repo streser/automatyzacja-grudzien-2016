@@ -16,19 +16,10 @@ import java.util.concurrent.TimeUnit;
 public abstract class Page {
 
     protected final WebDriver driver;
-    protected static final String CORRECT_LOGIN = "Warsztatautomatyzacja";
-    protected static final String CORRECT_PASS = "notsosimplepass123";
+
 
     public Page(WebDriver driver) {
         this.driver = driver;
-    }
-
-    protected void tryLogIn(String login, String pass) {
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        waitFor(By.id("loginform"));
-        insertText(By.id("user_login"), login);
-        insertText(By.id("user_pass"), pass);
-        driver.findElement(By.id("wp-submit")).click();
     }
 
 
@@ -38,26 +29,19 @@ public abstract class Page {
 
     }
 
-//    protected void openMainPage() {
+    //    protected void openMainPage() {
 //        driver.get(BASE_URL);       // + "wp-login.php?redirect_to=https%3A%2F%2Fszkolenieautoamatyzacjatech.wordpress.com%2Fwp-admin%2F&reauth=1"
 //    }
-
-    public void tryLogOut() {
+    public LoginPage logOut() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Actions action = new Actions(driver);
-        WebElement element = driver.findElement(By.id("wp-admin-bar-my-account"));
-        action.moveToElement(element).build().perform();
-        waitFor(By.linkText("Log Out"));
-        driver.findElement(By.linkText("Log Out")).click();
+        action.moveToElement(driver.findElement(By.id("wp-admin-bar-my-account"))).build().perform();
+        action.moveToElement(driver.findElement(By.linkText("Log Out"))).click().build().perform();
+        return new LoginPage(driver);
 
     }
 
-    public void openAddNewPostPage() {
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.findElement(By.id("menu-posts")).click();
-        waitFor(By.linkText("Add New"));
-        driver.findElement(By.linkText("Add New")).click();
-    }
+
 
     public void waitFor(By by) {
         WebDriverWait wait = new WebDriverWait(driver, 10);

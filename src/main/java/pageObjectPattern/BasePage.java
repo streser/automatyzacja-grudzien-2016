@@ -1,9 +1,6 @@
 package pageObjectPattern;
 
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,11 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public abstract class BasePage {
     protected WebDriver driver;
-    protected  WebElement element;
+    protected WebElement element;
 
 
-
-    public BasePage(WebDriver driver){
+    public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -36,24 +32,21 @@ public abstract class BasePage {
         waitForElement(element);
         element.click();
     }
-    public WebElement findElement(String id){
+
+    public WebElement findElement(String id) {
         return driver.findElement(By.id(id));
     }
 
-    public boolean waitForElement( WebElement element){
+    public boolean waitForElement(WebElement element) {
         try {
             new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(element));
-        }catch (TimeoutException e){
+        } catch (TimeoutException e) {
         }
         return true;
     }
 
-    public boolean waitForElementBy( By by){
-        try {
-            new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(by));
-        }catch (TimeoutException e){
-        }
-        return true;
+    public void waitForElementBy(By by) {
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
     public void waitForLoad(WebDriver driver) {

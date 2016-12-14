@@ -27,7 +27,7 @@ public class HomePage extends BasePage {
         waitForLoad(driver);
         boolean isPublished = true;
         try{
-            waitForElementBy(By.xpath("//a[contains(text()='"+title.toUpperCase()+"')]"));
+            waitForElementBy(By.xpath("//*[contains(text(),'"+title+"')]" ));
         }catch (NoSuchElementException e){
             isPublished = false;
         }

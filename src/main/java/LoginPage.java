@@ -12,6 +12,6 @@ public class LoginPage extends Page {
 
 
     public AdminPage logIn() {
-        return null;
+        return new AdminPage(driver);
     }
 }

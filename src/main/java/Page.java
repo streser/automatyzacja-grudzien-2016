@@ -1,34 +1,23 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
-import static com.sun.deploy.config.JREInfo.clear;
-import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
-import static com.thoughtworks.selenium.SeleneseTestBase.fail;
 
 /**
  * Created by Administrator on 2016-12-13.
  */
 public abstract class Page {
 
-    public static final String CORRECT_LOGIN = "warsztatautomatyzacja";
-    public static final String CORRECT_PASSWORD = "notsosimplepass123";
+
     public WebDriver driver;
-    public String baseUrl;
-    public boolean acceptNextAlert = true;
-    public StringBuffer verificationErrors = new StringBuffer();
     public static final By USER_ICON = By.cssSelector("img.avatar.avatar-32");
     public static final By LOGOUT_ICON = By.cssSelector("button.ab-sign-out");
 
 
-    public Page(WebDriver driver) {
+    public Page(WebDriver driver)
+    {
         this.driver = driver;
     }
 
@@ -41,6 +30,7 @@ public abstract class Page {
 
         waitForElement(by);
         driver.findElement(by).clear();
+        ;driver.findElement(by).isEnabled();
         driver.findElement(by).sendKeys(s);
     }
 

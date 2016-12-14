@@ -1,7 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static com.thoughtworks.selenium.SeleneseTestBase.fail;
 
 
 /**

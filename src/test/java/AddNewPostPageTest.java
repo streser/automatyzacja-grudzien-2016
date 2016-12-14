@@ -2,7 +2,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-import static org.openqa.selenium.By.linkText;
 
 /**
  * Created by Administrator on 2016-12-13.

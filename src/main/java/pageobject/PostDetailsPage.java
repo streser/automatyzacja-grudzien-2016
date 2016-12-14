@@ -11,4 +11,8 @@ public class PostDetailsPage extends Page {
     public PostDetailsPage(WebDriver driver) {
         super(driver);
     }
+
+    public void addComment() {
+
+    }
 }

@@ -4,10 +4,12 @@
 
 import org.openqa.selenium.WebDriver;
 
-public class PostPage {
+public class PostPage extends Page {
     public PostPage(WebDriver driver) {
-
+        super(driver);
+        open("http://streser.nazwa.pl/szkolenia/");
     }
+
 
     public void findPost(String title) {
 

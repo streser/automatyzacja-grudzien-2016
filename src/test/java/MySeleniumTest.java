@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 
-@RunWith(JUnitParamsRunner.class)
+//@RunWith(JUnitParamsRunner.class)
 
 public class MySeleniumTest extends TestScenario {
 
@@ -25,7 +25,7 @@ public class MySeleniumTest extends TestScenario {
     }
     //Test na negatywne logowanie
 
-    @Test
+   // @Test
    /* @Parameters({
             "Warsztatautomatyzacja, krowa",
             "akrowa, notsosimplepass123",

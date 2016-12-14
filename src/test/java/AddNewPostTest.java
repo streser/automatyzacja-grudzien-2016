@@ -18,12 +18,11 @@ public class AddNewPostTest extends Scenario{
         MainPage mainPage = loginPage.logInToBlog(USERNAME, PASSWORD);
         PostPage postPage = mainPage.goToPostsPage();
         NewPostPage newPostPage = postPage.goToAdddNewPostPage();
-        EditPostPage editPostPage = postPage.publishNewPost("title", "body");
-        mainPage = editPostPage.isPostPublished();
+        EditPostPage editPostPage = newPostPage.publishNewPost("Jasintitle", "Jasinbody");
+        assertTrue(editPostPage.getMeassge().contains("Post published"));
         mainPage.logOut();
-        HomePage homePage = new HomePage(driver);
-        homePage.openPage();
-        assertTrue(homePage.isPostPublished());
+        HomePage homePage = loginPage.pressBackToBlogHyperlink();
+        assertTrue(homePage.isPostPublished("Jasintitle"));
 
 
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 /**
  * Created by Administrator on 2016-12-13.
  */
-public class Scenario {
+public abstract class Scenario {
     protected WebDriver driver;
     private static final String BASE_URL = "http://streser.nazwa.pl/szkolenia/wp-login.php";
     protected  String USERNAME ="Warsztatautomatyzacja";

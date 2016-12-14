@@ -21,7 +21,7 @@ public class HomePage extends BasePage {
 
         List<WebElement> titles = driver.findElements(By.cssSelector("h1.entry-title > a"));
         List<String> titlesString = new ArrayList<String>();
-        for(WebElement t : titles){
+        for (WebElement t : titles) {
             titlesString.add(t.getText());
         }
 

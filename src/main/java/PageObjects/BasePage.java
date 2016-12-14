@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class BasePage {
     protected WebDriver driver;
 
-    BasePage(WebDriver driver){
+    BasePage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -34,7 +34,7 @@ public abstract class BasePage {
         driver.findElement(locator).sendKeys(text);
     }
 
-    protected void click(By locator){
+    protected void click(By locator) {
         driver.findElement(locator).click();
     }
 

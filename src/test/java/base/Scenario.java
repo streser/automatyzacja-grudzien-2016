@@ -29,7 +29,6 @@ public class Scenario {
     protected WebDriver driver;
 
 
-
     @Before
     public void setUp() {
 
@@ -42,7 +41,7 @@ public class Scenario {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

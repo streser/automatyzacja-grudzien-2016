@@ -29,7 +29,7 @@ public class LoginPage extends BasePage {
         driver.findElement(locator).sendKeys(text);
     }
 
-    protected void click(By locator){
+    protected void click(By locator) {
         driver.findElement(locator).click();
     }
 

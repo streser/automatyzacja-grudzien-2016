@@ -11,13 +11,13 @@ public class FirstPOPTest extends Scenario {
     private String title = "Test Text 123";
 
     @Test
-    public void shouldLogInAndLogOut(){
+    public void shouldLogInAndLogOut() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.open(BASE_URL+ "wp-login.php");
+        loginPage.open(BASE_URL + "wp-login.php");
         AdminPage adminPage = loginPage.logIn();
 
         AddNewPostPage addNewPostPage = adminPage.openAddNewPostPage();
-        addNewPostPage.publishNewPost(title,text);
+        addNewPostPage.publishNewPost(title, text);
         LogOutPage logOutPage = addNewPostPage.logOut();
         logOutPage.open(BASE_URL);
         HomePage homePage = new HomePage(driver);

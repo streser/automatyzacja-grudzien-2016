@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by Administrator on 2016-12-13.
  */
-public class AdminPage extends BasePage {
+public class AdminPage extends LoggedPage {
 
     public static final By POSTS = By.cssSelector("li#menu-posts");
 
@@ -18,7 +18,7 @@ public class AdminPage extends BasePage {
 
     public AddNewPostPage openAddNewPostPage() {
 
-        new WebDriverWait(driver,10).until(ExpectedConditions.presenceOfElementLocated(POSTS));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(POSTS));
         driver.findElement(POSTS).click();
         driver.findElement(By.linkText("Add New")).click();
         return new AddNewPostPage(driver);

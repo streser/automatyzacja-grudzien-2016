@@ -23,7 +23,8 @@ public class TestScenario {
         chromeOptions.addArguments("--start-maximized");
 
         driver = new ChromeDriver(chromeOptions);
-        baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com/";
+        baseUrl = "http://streser.nazwa.pl/szkolenia/";
+        //baseUrl = "http://streser.nazwa.pl/szkolenia/";
         //baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }

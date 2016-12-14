@@ -22,10 +22,12 @@ public class MySeleniumTest extends TestScenario {
     }
     //Test na negatywne logowanie
 
-    //@Test
-   // public void shouldNotLogin() throws Exception {
-       // driver.get(baseUrl + "/wp-login.php");
-        //tryLogIn();
-       // assertTrue(isElementPresent(By.linkText("text"))); //Do poprawy!!!
-    //}
+    @Test
+    @Parameters({"Warsztatautomatyzacja, notsosimplepass123"})
+    public void shouldBeFailedLogin(String login, String passwords)throws Exception{
+        driver.get(baseUrl + "wp-login.php");
+        tryLogIn();
+        assertTrue(isElementPresent(By.id("login_error")));
+
+    }
 }

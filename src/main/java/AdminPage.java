@@ -3,11 +3,12 @@
  */
 public class AdminPage {
     public AddNewPostPage goToNewPostPage() {
+        return null;
 
     }
 
     public PostPage goToPostPage() {
-
+        return null;
 
     }
 }

@@ -26,8 +26,8 @@ public class selleniumBaseScenario {
         driver = new ChromeDriver(ChromeOptions);
 
         driver.manage().deleteAllCookies();
-        baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com";
-        //baseUrl = "http://stalma.ch/testautom";
+        //baseUrl = "https://szkolenieautoamatyzacjatech.wordpress.com";
+        baseUrl = "http://stalma.ch/testautom";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         //WebDriverWait wait = new WebDriverWait(10);
@@ -73,6 +73,6 @@ public class selleniumBaseScenario {
 
     @After
     public void tearDown() throws Exception {
-       //driver.quit();
+       driver.quit();
     }
 }

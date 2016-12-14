@@ -23,8 +23,7 @@ public class shouldBeAbleToLogin extends selleniumBaseScenario {
             "asasas, notsosimplepass123",
             "asasas, asasas",
             ", notsosimplepass123",
-            "Warsztatautomatyzacja, ",
-            ", "
+            "Warsztatautomatyzacja, "
     })
     public void shouldntAbleToLogInFalseCredentials(String login, String password) throws Exception {
         openPageUrl("/wp-admin/");

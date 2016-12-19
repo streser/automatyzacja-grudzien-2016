@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -16,6 +17,7 @@ public abstract class Scenario2 {
 
     @Before
     public void setUp() throws Exception {
+        System.setProperty("webdriver.chrome.driver", "C:\\New Folder\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);

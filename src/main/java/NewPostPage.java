@@ -13,25 +13,25 @@ public class NewPostPage extends Page {
     public static final By TITLE_FIELD = By.cssSelector("input#title");
     private static final By BODY_FIELD = By.xpath("//*[@id=\"content\"]");
     private static final By PUBLISH_BUTTON = By.id("publish");
-    //private static final By TEXT_FRAME = By.xpath("//*[@id=\"content-html\"]");
 
+    //private static final By TEXT_FRAME = By.xpath("//*[@id=\"content-html\"]");
+/*
     private static final By AVATAR_ICON = By.xpath("//*[@id=\"wp-admin-bar-my-account\"]/a/img");
     private static final By SIGN_OUT_LINK = By.linkText("Log Out");
     private static final By ADDEDPOST = By.xpath("//*[@id=\"message\"]/p/text()");
-
+*/
     public NewPostPage(WebDriver driver) {
         super(driver);
     }
 
     public NewPostPage publishNewPage(String title, String text) {
         insertText(TITLE_FIELD, title);
-       // click(TEXT_FRAME);
+        // click(TEXT_FRAME);
         insertText(BODY_FIELD, text);
-        new WebDriverWait(driver,5).until(ExpectedConditions.elementToBeClickable(PUBLISH_BUTTON));
+        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(PUBLISH_BUTTON));
 
 
         click(PUBLISH_BUTTON);
-
 
 
         return this;
@@ -50,15 +50,21 @@ public class NewPostPage extends Page {
         Actions action = new Actions(driver);
 
 
-        action.moveToElement(driver.findElement(By.xpath("//*[@id=\"wp-admin-bar-my-account\"]/a/img"))).build().perform();
+        action.moveToElement(driver.findElement(By.xpath("//*[@id=\"wp-admin-bar-my-account\"]/a"))).build().perform();
 
         //action.moveByOffset(we.getLocation().getX(),we.getLocation().getY());
-   //     new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(SIGN_OUT_LINK));
+        //     new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(SIGN_OUT_LINK));
         //action.moveByOffset(so.getLocation().getX(),so.getLocation().getY()).perform();
         action.moveToElement(driver.findElement(By.linkText("Log Out"))).click().build().perform();
-      //  driver.findElement(SIGN_OUT_LINK).click();
+        //  driver.findElement(SIGN_OUT_LINK).click();
 
 
         return new LoginPage(driver);
+    }
+
+    public  NewPostPage GoToAllPosts() {
+        driver.findElement(By.xpath("//*[@id=\"menu-posts\"]/ul/li[2]/a")).click();
+        driver.findElement(By.xpath("//*[@id=\"post-1075\"]/td[1]/strong/a")).click();
+        return this;
     }
 }

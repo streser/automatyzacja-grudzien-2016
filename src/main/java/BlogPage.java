@@ -40,7 +40,7 @@ public class BlogPage extends Page {
         driver.findElement(By.id("email")).sendKeys("email");
         driver.findElement(By.id("url")).sendKeys("email");
         driver.findElement(By.id("comment")).sendKeys(s);
-        driver.findElement(By.cssSelector("#submit")).click();
+        driver.findElement(By.id("submit")).click();
 
         driver.findElement(By.cssSelector("#meta-2 > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)")).click();
 

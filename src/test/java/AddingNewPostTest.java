@@ -25,10 +25,14 @@ public class AddingNewPostTest extends Scenario2{
         UUID name = UUID.randomUUID();
 
         npp.publishNewPage(name.toString(), "body");
-        lp = npp.logOut();
-        BlogPage bp = lp.GoToBlog();
-        bp.isPostPublished(name.toString());
-        bp.LeaveComment("Add New Comment", name.toString());
+        npp.GoToAllPosts();
+
+        //npp.logOut();
+
+
+        //BlogPage bp = lp.GoToBlog();
+        //bp.isPostPublished(name.toString());
+        //bp.LeaveComment("Add New Comment", name.toString());
         //ap = lp.logIn();
 
 

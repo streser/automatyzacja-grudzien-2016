@@ -15,6 +15,7 @@ public abstract class AdminPage extends Page {
 
     //*[@id="wp-admin-bar-my-account"]/a
     public AdminPage(WebDriver driver) {
+
         super(driver);
     }
 

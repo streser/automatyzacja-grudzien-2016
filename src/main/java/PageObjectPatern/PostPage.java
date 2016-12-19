@@ -1,5 +1,6 @@
 package PageObjectPatern;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -10,6 +11,18 @@ public class PostPage extends AdminPage{
         super(driver);
     }
 
-    public void publishNewComment() {
+    public void publishNewComment(String name, String email, String comment) {
+        insertTekst(By.id("author"), name);
+        insertTekst(By.id("email"), email);
+        insertTekst(By.id("comment"), comment);
+        click(By.name("submit"));
+
     }
+    public SinglePostPage zMoveToChosenPost(String post){
+//        driver.getPageSource().contains(post);
+        driver.findElement(By.xpath("posts-filter"));
+        click(By.linkText(post));
+        return new SinglePostPage();
+    }
+
 }

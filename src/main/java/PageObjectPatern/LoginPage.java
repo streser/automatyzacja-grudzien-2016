@@ -17,6 +17,7 @@ public class LoginPage extends Page {
     }
 
     public MainPage logIn(String login, String password) {
+        webWait(By.id("user_login"));
         insertTekst(By.id("user_login"), login);
         insertTekst(By.id("user_pass"), password);
         driver.findElement(By.id("wp-submit")).click();

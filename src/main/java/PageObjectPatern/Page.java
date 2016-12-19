@@ -22,9 +22,14 @@ public abstract class Page {
         driver.findElement(by).sendKeys(text);
     }
 
-    public void click(By by) {
+    public PostPage click(By by) {
         driver.findElement(by).click();
+        return null;
     }
+//    public void click() {
+//        driver.findElement().click();
+//    }
+
     public void webWait(By element){
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));

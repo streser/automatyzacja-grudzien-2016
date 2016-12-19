@@ -2,10 +2,6 @@ package PageObjectPatern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.UUID;
 
 /**
  * Created by Pawel_D on 2016-12-13.
@@ -22,7 +18,6 @@ public class AddNewPostPage extends AdminPage {
         insertTekst(By.id("title"), tytul);
         click(By.id("content-html"));
         insertTekst(By.id("content"), text);
-
         click(By.id("publish"));
         webWait(By.id("message"));
     }

@@ -18,5 +18,10 @@ public class MainPage extends AdminPage{
         return new AddNewPostPage(driver);
     }
 
+    public PostPage MoveToPostPage() {
+        click(By.linkText("Posts"));
+        return new PostPage(driver);
+    }
+
 
 }
